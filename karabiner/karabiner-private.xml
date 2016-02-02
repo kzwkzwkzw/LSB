@@ -1,0 +1,140 @@
+<?xml version="1.0"?> <root>
+
+	<!-- ================= -->
+	<!-- Device Definition -->
+	<!-- ================= -->
+	<!-- LENOVO Thinkpad keyboard-->
+	<devicevendordef>
+		<vendorname>LENOVO</vendorname>
+		<vendorid>0x17ef</vendorid>
+	</devicevendordef>
+	<deviceproductdef>
+		<productname>THINKPAD_KEYBOARD</productname>
+		<productid>0x6009</productid>
+	</deviceproductdef>
+	<!-- FILCO Majestouch2 Convertible USB -->
+	<devicevendordef>
+		<vendorname>FILCO_USB</vendorname>
+		<vendorid>0x04d9</vendorid>
+	</devicevendordef>
+	<deviceproductdef>
+		<productname>MAJESTOUCH2_CONVERTIBLE_USB</productname>
+		<productid>0x0110</productid>
+	</deviceproductdef>
+	<!-- FILCO Majestouch2 Convertible Buletooth -->
+	<devicevendordef>
+		<vendorname>FILCO_BT</vendorname>
+		<vendorid>0x0a5c</vendorid>
+	</devicevendordef>
+	<deviceproductdef>
+		<productname>MAJESTOUCH2_CONVERTIBLE_BT</productname>
+		<productid>0x8502</productid>
+	</deviceproductdef>
+	<!-- Topre REALFORCE -->
+	<devicevendordef>
+		<vendorname>TOPRE</vendorname>
+		<vendorid>0x0853</vendorid>
+	</devicevendordef>
+	<deviceproductdef>
+		<productname>REALFORCE108U</productname>
+		<productid>0x011d</productid>
+	</deviceproductdef>
+
+	<!-- ============== -->
+	<!-- App Definition -->
+	<!-- ============== -->
+	<!-- MacVim -->
+	<appdef>
+		<appname>MACVIM</appname>
+		<equal>org.vim.MacVim</equal>
+	</appdef>
+	<!-- Parallels -->
+	<appdef>
+		<appname>PARALLELS</appname>
+		<equal>com.parallels.desktop.console</equal>
+	</appdef>
+	<!-- iTerm2 -->
+	<appdef>
+		<appname>ITERM2</appname>
+		<equal>com.googlecode.iterm2</equal>
+	</appdef>
+
+	<!-- ======= -->
+	<!-- Setting -->
+	<!-- ======= -->
+	<!-- my setting -->
+	<list>
+		<item>
+			<name>*** my setting ***</name>
+			<appendix>Precondition by Seil</appendix>
+			<appendix>+Caps Lock -> Left Ctrl : 59</appendix>
+			<appendix>+MUHENKAN -> JIS EISU : 102</appendix>
+			<appendix>+HENKAN -> JIS KANA  : 104</appendix>
+			<appendix>+KATAKANA -> Left Option : 55</appendix>
+			<list>
+				<item>
+					<name>All applications</name>
+					<appendix>Changing BACKQUOTE into VK_JIS_TOGGLE_EISUU_KANA</appendix>
+					<appendix>Changing HOME into COMMAND_L+CURSOR_LEFT</appendix>
+					<appendix>Changing END into COMMAND_L+CURSOR_RIGHT</appendix>
+					<appendix>Changing CONTROL_R+NumPad8 into VolumeUp</appendix>
+					<appendix>Changing CONTROL_R+NumPad2 into VolumeDown</appendix>
+					<appendix>Changing CONTROL_R+NumPad5 into MusicPlay</appendix>
+					<appendix>Changing CONTROL_R+NumPad6 into MusicNext</appendix>
+					<appendix>Changing CONTROL_R+NumPad4 into MusicPrev</appendix>
+					<identifier>private.for_topre_realforce108u_all_apps</identifier>
+					<autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::VK_JIS_TOGGLE_EISUU_KANA</autogen>
+					<autogen>__KeyToKey__ KeyCode::HOME, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::END, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::KEYPAD_8, ModifierFlag::CONTROL_R, KeyCode::VK_CONSUMERKEY_VOLUME_UP, ModifierFlag::SHIFT_L | ModifierFlag::OPTION_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::KEYPAD_2, ModifierFlag::CONTROL_R, KeyCode::VK_CONSUMERKEY_VOLUME_DOWN, ModifierFlag::SHIFT_L | ModifierFlag::OPTION_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::KEYPAD_5, ModifierFlag::CONTROL_R, KeyCode::VK_CONSUMERKEY_MUSIC_PLAY</autogen>
+					<autogen>__KeyToKey__ KeyCode::KEYPAD_6, ModifierFlag::CONTROL_R, KeyCode::VK_CONSUMERKEY_MUSIC_NEXT</autogen>
+					<autogen>__KeyToKey__ KeyCode::KEYPAD_4, ModifierFlag::CONTROL_R, KeyCode::VK_CONSUMERKEY_MUSIC_PREV</autogen>
+				</item>
+				<item>
+					<name>Exclude parallels</name>
+					<appendix>Swapping COMMAND_L and OPTION_L</appendix>
+					<appendix>Changing OPTION_R into COMMAND_R</appendix>
+					<appendix>Changing JIS_EISU into CONTROL_L if pressing plural keys</appendix>
+					<appendix>Changing JIS_KANA into CONTROL_L if pressing plural keys</appendix>
+					<appendix>Changing SPACE into SHIFT_L if pressing plural keys(SandS)</appendix>
+					<identifier>private.for_topre_realforce108u_exclude_parallels</identifier>
+					<not>PARALLELS</not>
+					<autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::COMMAND_R</autogen>
+					<autogen>__KeyOverlaidModifier__ KeyCode::JIS_EISUU, KeyCode::CONTROL_L, KeyCode::JIS_EISUU</autogen>
+					<autogen>__KeyOverlaidModifier__ KeyCode::JIS_KANA, KeyCode::CONTROL_L, KeyCode::JIS_KANA</autogen>
+					<autogen>__KeyOverlaidModifier__ KeyCode::SPACE, KeyCode::SHIFT_L, ModifierFlag::SANDS2, KeyCode::SPACE,</autogen>
+					<block>
+						<modifier_only>ModifierFlag::SANDS2</modifier_only>
+						<autogen>__BlockUntilKeyUp__ KeyCode::SPACE</autogen>
+					</block>
+				</item>
+				<item>
+					<name>Exclude MacVim,Terminal,iTerm2 and Parallels</name>
+					<appendix>Changing CONTROL_L+C into COMMAND_L+C</appendix>
+					<appendix>Changing CONTROL_L+V into COMMAND_L+V</appendix>
+					<appendix>Changing CONTROL_L+X into COMMAND_L+X</appendix>
+					<appendix>Changing CONTROL_L+Z into COMMAND_L+Z</appendix>
+					<appendix>Changing CONTROL_L+F into COMMAND_L+F</appendix>
+					<appendix>Changing CONTROL_L+S into COMMAND_L+S</appendix>
+					<appendix>Changing CONTROL_L+A into COMMAND_L+A</appendix>
+					<appendix>Changing CONTROL_L+T into COMMAND_L+T</appendix>
+					<identifier>private.for_topre_realforce108u_exclude_macvim_terminal_iterm2_parallels</identifier>
+					<not>MACVIM, TERMINAL, ITERM2, PARALLELS</not>
+					<autogen>__KeyToKey__ KeyCode::C, ModifierFlag::CONTROL_L, KeyCode::C, ModifierFlag::COMMAND_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::X, ModifierFlag::CONTROL_L, KeyCode::X, ModifierFlag::COMMAND_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::V, ModifierFlag::CONTROL_L, KeyCode::V, ModifierFlag::COMMAND_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::Z, ModifierFlag::CONTROL_L, KeyCode::Z, ModifierFlag::COMMAND_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::F, ModifierFlag::CONTROL_L, KeyCode::F, ModifierFlag::COMMAND_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::S, ModifierFlag::CONTROL_L, KeyCode::S, ModifierFlag::COMMAND_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::A, ModifierFlag::CONTROL_L, KeyCode::A, ModifierFlag::COMMAND_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::T, ModifierFlag::CONTROL_L, KeyCode::T, ModifierFlag::COMMAND_L</autogen>
+				</item>
+			</list>
+		</item>
+	</list>
+</root>
+
