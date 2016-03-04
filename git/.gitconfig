@@ -25,6 +25,9 @@
 	ba = branch -a
 	co = checkout
 	l = log
+	ls = log --stat
+	lL = log -L
+	lG = log -G
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	sh = show
 	ss = stash
@@ -32,6 +35,16 @@
 	ssl = stash list
 	sss = stash save
 	ssa = stash apply
+	ssa0 = stash apply stash@{0}
+	ssa1 = stash apply stash@{1}
+	ssa2 = stash apply stash@{2}
+	ssa3 = stash apply stash@{3}
+	ssa4 = stash apply stash@{4}
+	ssa5 = stash apply stash@{5}
+	ssa6 = stash apply stash@{6}
+	ssa7 = stash apply stash@{7}
+	ssa8 = stash apply stash@{8}
+	ssa9 = stash apply stash@{9}
 	ssd = stash drop
 	ssc = stash clear
 	ssb = stash branch
